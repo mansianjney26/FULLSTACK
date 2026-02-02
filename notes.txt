@@ -7,3 +7,5 @@ var is allowed to hosting before declaraton but show undefined output
 { }->always for blocks
 ( )->always for function
 const can be mutable but cannot reassignment
+npx create-react-app Myfirstapp
+npx create vite@latest
