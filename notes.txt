@@ -8,4 +8,5 @@ var is allowed to hosting before declaraton but show undefined output
 ( )->always for function
 const can be mutable but cannot reassignment
 npx create-react-app Myfirstapp
-npx create vite@latest
+npm create vite@latest
+npm run dev (starting the app)
