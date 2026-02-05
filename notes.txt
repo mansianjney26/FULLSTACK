@@ -10,3 +10,5 @@ const can be mutable but cannot reassignment
 npx create-react-app Myfirstapp
 npm create vite@latest
 npm run dev (starting the app)
+functional component 
+class component
