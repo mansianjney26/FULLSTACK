@@ -1,0 +1,14 @@
+var is a global scope 
+let and const is restricted inside the curly brackets
+let is mutable
+const is immutable
+when you use something before declaration let and const show error
+var is allowed to hosting before declaraton but show undefined output
+{ }->always for blocks
+( )->always for function
+const can be mutable but cannot reassignment
+npx create-react-app Myfirstapp
+npm create vite@latest
+npm run dev (starting the app)
+functional component 
+class component
