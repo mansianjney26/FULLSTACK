@@ -1,33 +1,97 @@
-export default function EventTodo(){
-    /* function handleclick(name)
-     {
-         alert(`Button pressed by ${name}`);
-    }*/
-    function handleSubmit(e) {
+import { useState } from "react";
+
+export default function EventToDo()
+{  
+/*    function handleSubmit(e)
+    {
         e.preventDefault();
-        const input = e.target.value;
-        const inputValue = input.trim();
-        if(inputValue===""){
-            alert("Task can not be empty");
+        //console.log("Event Happen");
+        const input=e.target.task;
+        const taskValue=input.value.trim();
+        if(taskValue==="")
+        {
+        
+            alert("Can not add empty task"); 
             return;
         }
         const li=document.createElement("li");
-        li.innerHTML=<Span>${inputValue}</Span>
+        li.innerHTML=`<span>${taskValue}</span>
+        <button class="deleteBtn">Delete</button>`;
+        document.getElementById("taskList").appendChild(li);
 
     }
-    return (
-        <>
-        <h1> Event To Do <app></app></h1>
-        <button onclick={() => handleclick("Mansi")}>Click Me</button>
+
+    function handleListClick(e)
+    {
+        if(e.target.className==="deleteBtn")
+        {
+            e.target.parentElement.remove();
+        }
+    }
+
+    return(
+    <>
+    <h1> To Do List</h1>
+    <form onSubmit={handleSubmit}>
+    <input type="text" name="task" placeholder="Enter Task"/>
+    <button type="submit">Add Task</button>
+
+    </form>
+    <ul id="taskList" onClick={handleListClick}></ul>
+    </>);*/
+
+   const[task,setTask]=useState("");
+   const[tasks,setTasks]=useState([]);
 
 
-        <form onSubmit={handleSubmit}> 
-            <input type="text" name="task" placeholder="Add you task here"/>
-            <input type="submit"> Add Task</input>
-        </form>
-        <ul id="taskList" onClick={handleClickList}>
-            <li></li>
-        </ul>
-        </>
+ function handleSubmit(e) {
+    e.preventDefault();
+
+    const taskValue = task.trim();
+
+    if (taskValue === "") {
+      alert("Cannot add empty task");
+      return;
+    }
+
+    setTasks((prevTasks) => [...prevTasks, taskValue]);
+    setTask("");
+  }
+
+  function handleDelete(index) {
+    setTasks((prevTasks) =>
+      prevTasks.filter((_, i) => i !== index)
     );
+  }
+
+
+    return(
+        <>
+      <h1>To Do List</h1>
+
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Enter Task"
+          value={task}
+          onChange={(e) => setTask(e.target.value)}
+        />
+        <button type="submit">Add Task</button>
+      </form>
+
+      <ul>
+        {tasks.map((item, index) => (
+          <li key={index}>
+            <span>{item}</span>
+            <button
+              className="deleteBtn"
+              onClick={() => handleDelete(index)}
+            >
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+    </>
+);
 }

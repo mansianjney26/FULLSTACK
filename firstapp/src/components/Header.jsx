@@ -1,13 +1,14 @@
-export default function Header(){
-   return(
-        <>
-        <h1>My first React App</h1>
+import React from 'react'
 
-        <nav>
-            <a href='#'>Home</a>
-            <a href='#'>Contact Us</a>
-            <a href='#'>Next Webpage</a>
-        </nav>
-        </>
-   )
+const Header = ({title,color,year}) => {
+  return (
+    <div>
+      <h1>{title}</h1>
+      <h2>{color}</h2>
+      <h2>{year}</h2>
+    </div>
+  )
 }
+
+export default Header
+

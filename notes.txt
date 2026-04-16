@@ -12,3 +12,5 @@ npm create vite@latest
 npm run dev (starting the app)
 functional component 
 class component
+State is one of the hook -> 4 hooks 
+one of the most important hook is usestate
